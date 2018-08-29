@@ -1,0 +1,32 @@
+.stripe-button-el {
+  border: 1px solid $primary !important;
+  background-color: white !important;
+  color: $primary !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 1rem;
+
+  span {
+    content: 'Pay With Stripe' !important;
+    background-image: none !important;
+    background: transparent !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-family: $font-family-serif-main !important;
+    color: $primary !important;
+    font-size: 24px !important;
+    padding: 0.5rem 1.5rem !important;
+    height: auto !important;
+
+  }
+
+  &:hover {
+    background-color: $primary !important;
+    transition: all 0.5s ease;
+
+    span {
+      color: white !important;
+    }
+  }
+}

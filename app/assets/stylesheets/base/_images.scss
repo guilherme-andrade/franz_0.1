@@ -1,0 +1,42 @@
+.img-frame {
+  background-image: url('https://i.pinimg.com/originals/c2/4c/3b/c24c3b8b9736830196a12d19096b1c31.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(10px 10px 20px $gray-400);
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  height: 400px;
+  width: 300px;
+  transition: all 0.5s ease;
+
+  + div {
+    transition: all 0.5s ease;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: contrast(200%)
+            drop-shadow(10px 10px 20px $gray-400);
+    position: absolute;
+    height: calc(100% - 150px);
+    width: 150px;
+    bottom: 75px;
+    left: calc(50% - 75px);
+  }
+  // &:hover {
+  //   height: 600px;
+  //   width: 450px;
+  //   margin: -100px 0;
+  //   transition: all 0.5s ease;
+
+  //   + div {
+  //     transition: all 0.5s ease;
+  //     bottom: 0;
+  //     height: 100%;
+  //     width: 250px;
+  //     left: calc(50% - 125px);
+  //   }
+  // }
+}

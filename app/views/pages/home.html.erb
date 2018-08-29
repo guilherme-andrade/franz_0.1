@@ -1,0 +1,17 @@
+<main class="w-100 h-100 banner d-flex flex-column align-items-center justify-content-end pb-5" style="background-image: url('http://franz.today/wp-content/uploads/2018/03/FRANZ-LOGO-weiss.png')">
+  <%= link_to 'Click to Get Started', @next, class: 'btn btn-lg btn-outline-primary', id: 'next' %>
+  <p><small>or press <u>ENTER</u></small></p>
+</main>
+
+
+
+<%= content_for :after_js do %>
+  <script>
+    $(window).keydown(function(e) {
+      console.log(e.keyCode);
+      if (e.keyCode === 13) {
+        $('#next')[0].click();
+      }
+    });
+  </script>
+<% end %>

@@ -1,0 +1,19 @@
+body {
+  letter-spacing: .2px;
+  height: 100vh;
+}
+
+h1 {
+  padding-bottom: 0.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid $primary;
+  display: inline-block;
+}
+
+.text-right {
+  margin-right: -100px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

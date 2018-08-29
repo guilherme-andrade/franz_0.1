@@ -1,0 +1,22 @@
+<header class="navbar fixed-top d-flex justify-content-end align-items-center px-5 py-4">
+  <nav class="navbar-menu">
+    <ul class="list-inline">
+      <% if @product && @product.persisted? %>
+        <li class="list-inline-item">
+          <%= link_to 'Edit', edit_product_path(@product), class: 'text-primary' %>
+        </li>
+        <li class="list-inline-item">
+          <%= link_to 'See Item Purchases', '#' %>
+        </li>
+      <% end %>
+      <% unless @products %>
+        <li class="list-inline-item">
+          <%= link_to 'See All Products', products_path, class: 'text-primary' %>
+        </li>
+      <% end %>
+      <li class="list-inline-item">
+        <%= link_to 'Log Out', destroy_session_path(current_admin), method: :delete, class: 'text-primary' %>
+      </li>
+    </ul>
+  </nav>
+</header>

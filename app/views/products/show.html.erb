@@ -1,0 +1,37 @@
+<main class="wrapper d-flex flex-column justify-content-center pb-3 h-100">
+  <div class="container text-center">
+    <div class="row">
+      <section class="col-12 col-sm-10 offset-sm-1 text-center mb-4 position-relative">
+        <div class="img-frame">
+        </div>
+        <div style="background-image: url('http://pngimg.com/uploads/boots/boots_PNG7801.png')"></div>
+      </section>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+      <section class="col-12 col-md-10 offset-md-1">
+        <h1><%= @product.name %>, <small class="right-text"><%= @product.price %> chf</small></h1>
+        <p class="text-justify" style="height: 180px; margin-bottom: 0;"><%= @product.post %></p>
+
+        <%= simple_form_for @order do |f| %>
+          <%= f.input :product_id, input_html: { value: @product.id }, as: :hidden %>
+          <%= f.submit 'Buy Now', class: 'btn btn-lg btn-outline-primary px-5 mb-2' %>
+        <% end %>
+        <p><small>or press <u>SPACE</u> to see another random product</small></p>
+        <%= link_to '', @next, class: 'hidden', id: 'next' %>
+      </section>
+    </div>
+  </div>
+</main>
+
+<%= content_for :after_js do %>
+  <script>
+    $(window).keydown(function(e) {
+      console.log(e.keyCode);
+      if (e.keyCode === 32) {
+        $('#next')[0].click();
+      }
+    });
+  </script>
+<% end %>
