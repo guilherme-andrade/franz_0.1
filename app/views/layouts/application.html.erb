@@ -10,9 +10,9 @@
     <%= favicon_link_tag 'favicon.ico' %>
     <meta property="og:url"                content="<%= request.url %>" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="<%= @product ? "Today on FRANZ: #{@product.name}" | "FRANZ.today - Sustainable Products Everyday" %>" />
+    <meta property="og:title"              content="<%= @product ? "Today on FRANZ: #{@product.name}" : "FRANZ.today - Sustainable Products Everyday" %>" />
     <meta property="og:description"        content="<%= @product ? @product.description : "A blog of my favorite sustainable products where you can find inspiration to living a more consciously" %>" />
-    <meta property="og:image"              content="<%= @product ? cl_image_path @product.photo : 'http://franz.today/wp-content/uploads/2018/03/FRANZ-LOGO-weiss.png' %>" />
+    <meta property="og:image"              content="<%= @product ? cl_image_path(@product.photo) : 'http://franz.today/wp-content/uploads/2018/03/FRANZ-LOGO-weiss.png' %>" />
   </head>
 
   <body class="<%= current_admin ? 'pt-5' : 'no-scroll' %>">
