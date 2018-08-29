@@ -8,7 +8,7 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @order.product %>
+  <%= @order.product.name %>
 </p>
 
 <p>
@@ -31,5 +31,4 @@
   <%= @order.name %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Home', root_path %>

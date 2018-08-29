@@ -25,6 +25,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker'
 gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

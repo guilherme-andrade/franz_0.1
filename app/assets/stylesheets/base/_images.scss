@@ -21,10 +21,11 @@
             drop-shadow(10px 10px 20px $gray-400);
     position: absolute;
     height: calc(100% - 150px);
-    width: 150px;
+    width: 100px;
     bottom: 75px;
-    left: calc(50% - 75px);
+    left: calc(50% - 50px);
   }
+
   // &:hover {
   //   height: 600px;
   //   width: 450px;
@@ -39,4 +40,16 @@
   //     left: calc(50% - 125px);
   //   }
   // }
+
+  &-small {
+    height: 200px;
+    width: 175px;
+
+    + div {
+      height: calc(100% - 40px);
+      bottom: 20px;
+      width: 60px;
+      left: calc(50% - 30px);
+    }
+  }
 }

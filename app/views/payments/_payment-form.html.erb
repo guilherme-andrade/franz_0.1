@@ -1,0 +1,45 @@
+<aside class="col-12 col-md-7 fixed-right h-100 p-5">
+  <%= link_to 'Cancel Order', @order, method: :delete %>
+  <%= simple_form_for "order", url: order_payments_path(@order), method: :post, class: 'h-100', wrapper: :horizontal_form do |f| %>
+      <main class="wrapper d-flex flex-column justify-content-center pb-3 h-100">
+        <div class="container text-center">
+            <header class="col-12 py-5">
+              <h4 class="border-0 d-block">You're buying <%= @product.name %></h4>
+            </header>
+
+          <div class="row flex-row-reverse">
+            <section class="col-12 col-md-4">
+              <div style="height: 200px; width: 175px; position: relative; ">
+                <div class="img-frame img-frame-small">
+                </div>
+                <div style="background-image: url('http://pngimg.com/uploads/boots/boots_PNG7801.png')"></div>
+              </div>
+              <h5 style="width: 175px; padding-top: 15px;"><%= @product.price %> chf</h5>
+            </section>
+
+            <section class="col-12 col-md-8">
+              <%= f.input :name %>
+              <%= f.input :email %>
+              <%= f.input :phone_number %>
+              <%= f.input :country %>
+              <%= f.input :city %>
+              <%= f.input :street_address %>
+              <%= f.input :zip_code %>
+            </section>
+          </div>
+            <section class="col-12 col-md-8">
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="Checkout"
+                data-email="<%= Admin.first.email %>"
+                data-description="<%= @order.product.name %>"
+                data-amount="<%= @order.amount_cents %>"
+                data-currency="<%= @order.amount.currency %>">
+              </script>
+            </section>
+          </div>
+        </div>
+
+      </main>
+  <% end %>
+</aside>

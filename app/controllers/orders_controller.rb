@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to new_order_payment_path(@order), notice: 'Order was successfully created.' }
+        format.html { redirect_to new_order_payment_path(@order) }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { redirect_to @order.product }
@@ -43,6 +43,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:state, :product_id, :amount, :payment, :email, :name)
+      params.require(:order).permit(:state, :product_id, :amount, :payment, :email, :name, :country, :city, :street_address, :zip_code, :phone_number)
     end
 end

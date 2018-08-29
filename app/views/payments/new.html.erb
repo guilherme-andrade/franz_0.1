@@ -25,37 +25,7 @@
   </div>
 </main>
 
-<aside class="col-6 fixed-right h-100 p-5">
-  <%= link_to 'Cancel Order', @order, method: :delete %>
-  <%= form_tag order_payments_path(@order), class: 'h-100' do %>
-      <main class="wrapper d-flex flex-column justify-content-center pb-3 h-100">
-        <div class="container text-center">
-          <div class="row">
-            <section class="col-12 col-sm-10 offset-sm-1 text-center mb-4 position-relative">
-              <div class="img-frame">
-              </div>
-              <div style="background-image: url('http://pngimg.com/uploads/boots/boots_PNG7801.png')"></div>
-            </section>
-          </div>
-        </div>
-        <div class="container text-center">
-          <div class="row">
-            <section class="col-12 col-md-10 offset-md-1">
-              <h1 class="border-0"><%= @product.name %></h1>
-              <h2><%= @product.price %> chf</h2>
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-name="Checkout"
-                data-email="<%= Admin.first.email %>"
-                data-description="<%= @order.product.name %>"
-                data-amount="<%= @order.amount_cents %>"
-                data-currency="<%= @order.amount.currency %>"></script>
-            </section>
-          </div>
-        </div>
-      </main>
-  <% end %>
-</aside>
+<%= render 'payment-form' %>
 
 <%= content_for :after_js do %>
   <script>
