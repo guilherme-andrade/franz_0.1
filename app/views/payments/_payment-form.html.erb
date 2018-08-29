@@ -34,7 +34,8 @@
                 data-email="<%= Admin.first.email %>"
                 data-description="<%= @order.product.name %>"
                 data-amount="<%= @order.amount_cents %>"
-                data-currency="<%= @order.amount.currency %>">
+                data-currency="<%= @order.amount.currency %>"
+                data-label="Checkout with Stripe">
               </script>
             </section>
           </div>
