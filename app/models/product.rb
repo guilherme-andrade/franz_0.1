@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   monetize :price_cents
-  has_many :orders
+  has_many :orders, dependent: :destroy
 end

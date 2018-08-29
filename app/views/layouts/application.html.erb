@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= 'no-scroll' unless current_admin %>">
+  <body class="<%= current_admin ? 'pt-5' : 'no-scroll' %>">
     <%= render 'shared/navbar' if current_admin %>
     <%= yield %>
     <%= yield :after_js %>
